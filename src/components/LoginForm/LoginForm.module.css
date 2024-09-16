@@ -1,0 +1,82 @@
+.loginform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap:10px;
+}
+
+h1{
+    color:var(--primary-color);
+}
+
+.formGroup {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap:10px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    gap:10px;
+    border: 1px solid #333333;
+}
+
+.error {
+    background-color: var(--error-color, #f44336);
+    color: #fff;
+    padding: 10px;
+    font-size: 12px;
+    width: 250px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid red;
+    display: block;
+    margin-top: 10px;
+}
+
+button{
+    background-color: var(--primary-color);
+    color:var(--secondary-color);;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+label{
+    color:var(--primary-color);
+    font-size: 12px;
+}
+
+input{
+    background-color: var(--primary-color);
+    border: 1px solid #333333;
+    border-radius: 5px;
+    padding: 5px;
+    color:var(--secondary-color);
+    font-size: 12px;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db; 
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

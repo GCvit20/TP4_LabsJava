@@ -1,0 +1,9 @@
+
+body{
+    background-color: var(--primary-color);
+    font-family: "Roboto", sans-serif;
+}
+
+h1{
+    font-size: 16px;
+}
