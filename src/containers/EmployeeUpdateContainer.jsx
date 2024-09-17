@@ -1,38 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { EmployeeForm } from "../components";
-
-const fetchEmployeeById = async (id) => {
-    try {
-        const response = await fetch(`http://localhost:3000/employees/${id}`);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return await response.json();
-    } catch (error) {
-        console.error('Error fetching employee:', error);
-        throw error;
-    }
-};
-
-const updateEmployee = async (employee, id) => {
-    try {
-        const response = await fetch(`http://localhost:3000/employees/${id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(employee),
-        });
-
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-    } catch (error) {
-        console.error('Error updating employee:', error);
-        throw error;
-    }
-};
+import { updateEmployee, fetchEmployeeById } from '../db/api';
 
 const EmployeeUpdateContainer = () => {
     const { id } = useParams();

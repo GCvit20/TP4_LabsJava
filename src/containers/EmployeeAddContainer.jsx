@@ -2,25 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { EmployeeForm } from "../components";
-
-const saveEmployee = async (employee) => {
-    try {
-        const response = await fetch('http://localhost:3000/employees', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(employee),
-        });
-
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-    } catch (error) {
-        console.error('Error saving employee:', error);
-        throw error;
-    }
-};
+import { saveEmployee } from '../db/api';
 
 const EmployeeAddContainer = () => {
     const navigate = useNavigate();
