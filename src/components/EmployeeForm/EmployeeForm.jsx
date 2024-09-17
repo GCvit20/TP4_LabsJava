@@ -2,10 +2,11 @@
 import PropTypes from 'prop-types';
 import styles from './EmployeeForm.module.css';
 import React, { useState, useEffect } from 'react';
+import useValidations from '../../hooks/useValidations';
 
 const EmployeeForm = ({ employee, onSubmit, isEdit, onChange }) => {
-
     const [formData, setFormData] = useState(employee);
+    const [errors, setErrors] = useState({});
 
     useEffect(() => {
         setFormData(employee);
@@ -18,12 +19,20 @@ const EmployeeForm = ({ employee, onSubmit, isEdit, onChange }) => {
             [name]: value,
         }));
 
-        onChange(e);
+        if (onChange) {
+            onChange(e);
+        }
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSubmit(formData);
+        const validationErrors = useValidations(formData);
+        if (Object.keys(validationErrors).length > 0) {
+            setErrors(validationErrors);
+        } else {
+            setErrors({});
+            onSubmit(formData);
+        }
     };
 
     return (
@@ -41,6 +50,7 @@ const EmployeeForm = ({ employee, onSubmit, isEdit, onChange }) => {
                             onChange={handleChange}
                             required
                         />
+                        {errors.name && <span className={styles.error}>{errors.name}</span>}
                     </div>
                     <div className={styles.formGroup}>
                         <label htmlFor="position">Posición:</label>
@@ -52,6 +62,7 @@ const EmployeeForm = ({ employee, onSubmit, isEdit, onChange }) => {
                             onChange={handleChange}
                             required
                         />
+                        {errors.position && <span className={styles.error}>{errors.position}</span>}
                     </div>
                     <div className={styles.formGroup}>
                         <label htmlFor="departament">Departamento:</label>
@@ -63,6 +74,7 @@ const EmployeeForm = ({ employee, onSubmit, isEdit, onChange }) => {
                             onChange={handleChange}
                             required
                         />
+                        {errors.departament && <span className={styles.error}>{errors.departament}</span>}
                     </div>
                     <div className={styles.formGroup}>
                         <label htmlFor="email">Email:</label>
@@ -74,17 +86,19 @@ const EmployeeForm = ({ employee, onSubmit, isEdit, onChange }) => {
                             onChange={handleChange}
                             required
                         />
+                        {errors.email && <span className={styles.error}>{errors.email}</span>}
                     </div>
                     <div className={styles.formGroup}>
                         <label htmlFor="phone">Teléfono:</label>
                         <input
-                            type="number"
+                            type="text"
                             id="phone"
                             name="phone"
                             value={formData.phone || ''}
                             onChange={handleChange}
                             required
                         />
+                        {errors.phone && <span className={styles.error}>{errors.phone}</span>}
                     </div>
                     <button type="submit" className={styles.submitButton}>
                         {isEdit ? 'Actualizar Empleado' : 'Agregar Empleado'}
@@ -92,7 +106,6 @@ const EmployeeForm = ({ employee, onSubmit, isEdit, onChange }) => {
                 </form>
             </div>
         </section>
-        
     );
 };
 

@@ -31,8 +31,7 @@ const EmployeeAddContainer = () => {
             await saveEmployee(employeeData);
             navigate('/home');
         } catch (error) {
-            console.error('Error saving employee:', error);
-            setError('Failed to save employee.');
+            setError('No se pudo guardar el empleado.');
         } finally {
             setLoading(false);
         }

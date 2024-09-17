@@ -24,8 +24,7 @@ const EmployeeUpdateContainer = () => {
                     setLoading(false);
                 })
                 .catch((error) => {
-                    console.error('Error fetching employee:', error);
-                    setError('Failed to fetch employee.');
+                    setError('No se puedo buscar el empleado.');
                     setLoading(false);
                 });
         } else {
@@ -47,8 +46,7 @@ const EmployeeUpdateContainer = () => {
             await updateEmployee(employeeData, id);
             navigate('/home');
         } catch (error) {
-            console.error('Error updating employee:', error);
-            setError('Failed to update employee.');
+            setError('No se pudo actualizar el empleado.');
         } finally {
             setLoading(false);
         }
