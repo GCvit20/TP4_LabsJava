@@ -54,7 +54,7 @@ const useAuth = () => {
   const onLogout = () => {
     localStorage.removeItem("token");
     setIsLogged(false);
-
+    window.location.reload();
   };
 
   return { isLogged, onLogin, onLogout, loading, error };

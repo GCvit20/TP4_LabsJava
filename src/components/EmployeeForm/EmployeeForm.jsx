@@ -27,69 +27,72 @@ const EmployeeForm = ({ employee, onSubmit, isEdit, onChange }) => {
     };
 
     return (
-        <div className={styles.formContainer}>
-            <h2>{isEdit ? 'Modificar Empleado' : 'Agregar Empleado'}</h2>
-            <form onSubmit={handleSubmit} className={styles.form}>
-                <div className={styles.formGroup}>
-                    <label htmlFor="name">Nombre:</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name || ''}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className={styles.formGroup}>
-                    <label htmlFor="position">Posición:</label>
-                    <input
-                        type="text"
-                        id="position"
-                        name="position"
-                        value={formData.position || ''}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className={styles.formGroup}>
-                    <label htmlFor="departament">Departamento:</label>
-                    <input
-                        type="text"
-                        id="departament"
-                        name="departament"
-                        value={formData.departament || ''}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className={styles.formGroup}>
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email || ''}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className={styles.formGroup}>
-                    <label htmlFor="phone">Teléfono:</label>
-                    <input
-                        type="text"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone || ''}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <button type="submit" className={styles.submitButton}>
-                    {isEdit ? 'Actualizar Empleado' : 'Agregar Empleado'}
-                </button>
-            </form>
-        </div>
+        <section className={styles.formSection}>
+            <div className={styles.formContainer}>
+                <h2>{isEdit ? 'Modificar Empleado' : 'Agregar Empleado'}</h2>
+                <form onSubmit={handleSubmit} className={styles.form}>
+                    <div className={styles.formGroup}>
+                        <label htmlFor="name">Nombre:</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={formData.name || ''}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div className={styles.formGroup}>
+                        <label htmlFor="position">Posición:</label>
+                        <input
+                            type="text"
+                            id="position"
+                            name="position"
+                            value={formData.position || ''}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div className={styles.formGroup}>
+                        <label htmlFor="departament">Departamento:</label>
+                        <input
+                            type="text"
+                            id="departament"
+                            name="departament"
+                            value={formData.departament || ''}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div className={styles.formGroup}>
+                        <label htmlFor="email">Email:</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={formData.email || ''}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div className={styles.formGroup}>
+                        <label htmlFor="phone">Teléfono:</label>
+                        <input
+                            type="number"
+                            id="phone"
+                            name="phone"
+                            value={formData.phone || ''}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <button type="submit" className={styles.submitButton}>
+                        {isEdit ? 'Actualizar Empleado' : 'Agregar Empleado'}
+                    </button>
+                </form>
+            </div>
+        </section>
+        
     );
 };
 

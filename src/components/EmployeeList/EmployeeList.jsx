@@ -19,7 +19,6 @@ const EmployeeList = ({
             <table className={styles.table}>
                 <thead>
                     <tr>
-                        <th>Id</th>
                         <th>Nombre</th>
                         <th>Posicion</th>
                         <th>Departamento</th>
@@ -30,7 +29,6 @@ const EmployeeList = ({
                 <tbody>
                     {employees.map(employee => (
                         <tr key={employee.id}>
-                            <td>{employee.id}</td>
                             <td>{employee.name}</td>
                             <td>{employee.position}</td>
                             <td>{employee.departament}</td>

@@ -2,33 +2,14 @@
 import React from 'react';
 import styles from './LandingPage.module.css';
 import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
+import { Navbar } from '../../components';
 
-const LandingPage = ({ }) => {
-
-	const navigate = useNavigate();
-
-	const handleLogin = () => {
-		navigate("/login");
-	}
-
-	const handleLanding = () => {
-		navigate("/");
-	}
-
+const LandingPage = () => {
+	
 	return (
 		<>
-			<div className={styles.navbar}>
-				<div className={styles.navbarLogo}>
-				</div>
-				<nav>
-					<ul>
-						<li onClick={handleLanding}><i className="fas fa-home"></i></li>
-					</ul>
-				</nav>
-				<div>
-					<button className={styles.navbarButton} onClick={handleLogin}>Login</button>
-				</div>
+			<div>
+				<Navbar />
 			</div>
 			<div className={styles.landing}>
 				<div className={styles.overlay}>

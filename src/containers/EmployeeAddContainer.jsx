@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { EmployeeForm } from "../components";
 
@@ -31,6 +31,7 @@ const EmployeeAddContainer = () => {
         email: '',
         phone: ''
     });
+    
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
@@ -46,7 +47,7 @@ const EmployeeAddContainer = () => {
         setLoading(true);
         try {
             await saveEmployee(employeeData);
-            navigate('/panelAdm');
+            navigate('/home');
         } catch (error) {
             console.error('Error saving employee:', error);
             setError('Failed to save employee.');

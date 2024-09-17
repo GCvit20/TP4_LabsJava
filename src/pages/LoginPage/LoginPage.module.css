@@ -1,5 +1,5 @@
 .loginPage {
-    background: linear-gradient(to bottom, #ffffff,#666666);
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;

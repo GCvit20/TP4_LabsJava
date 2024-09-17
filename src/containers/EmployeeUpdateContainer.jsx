@@ -76,7 +76,7 @@ const EmployeeUpdateContainer = () => {
         setLoading(true);
         try {
             await updateEmployee(employeeData, id);
-            navigate('/panelAdm');
+            navigate('/home');
         } catch (error) {
             console.error('Error updating employee:', error);
             setError('Failed to update employee.');
