@@ -1,0 +1,42 @@
+{
+    "employees": [
+        {
+            "id": 1,
+            "name": "Ana Martínez",
+            "position": "Diseñadora Gráfica",
+            "departament": "Marketing",
+            "email": "ana.martinez@example.com",
+            "phone": "2345678901"
+        },
+        {
+            "id": 2,
+            "name": "Carlos Gómez",
+            "position": "Analista de Datos",
+            "departament": "IT",
+            "email": "carlos.gomez@example.com",
+            "phone": "3456789012"
+        },
+        {
+            "id": 3,
+            "name": "Laura Fernández",
+            "position": "Gerente de Proyecto",
+            "departament": "Operaciones",
+            "email": "laura.fernandez@example.com",
+            "phone": "4567890123"
+        },
+        {
+            "id": 4,
+            "name": "Miguel Sánchez",
+            "position": "Especialista en SEO",
+            "departament": "Marketing",
+            "email": "miguel.sanchez@example.com",
+            "phone": "5678901234"
+        }
+    ],
+    "users": [
+        {
+            "username": "admin",
+            "password": "admin"
+        }
+    ]
+}
