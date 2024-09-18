@@ -29,7 +29,7 @@ const EmployeeAddContainer = () => {
         setLoading(true);
         try {
             await saveEmployee(employeeData);
-            navigate('/home');
+            navigate('/employee');
         } catch (error) {
             setError('No se pudo guardar el empleado.');
         } finally {

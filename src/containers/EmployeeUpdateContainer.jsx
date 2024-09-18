@@ -44,7 +44,7 @@ const EmployeeUpdateContainer = () => {
         setLoading(true);
         try {
             await updateEmployee(employeeData, id);
-            navigate('/home');
+            navigate('/employee');
         } catch (error) {
             setError('No se pudo actualizar el empleado.');
         } finally {

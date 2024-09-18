@@ -1,0 +1,8 @@
+.employeepage {
+        display: flex;
+        background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+}

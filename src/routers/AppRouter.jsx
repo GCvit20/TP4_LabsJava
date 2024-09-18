@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { LoginPage, LandingPage, EmployeeAddPage, EmployeeUpdatePage, HomePage } from "../pages";
+import { LoginPage, LandingPage, EmployeeAddPage, EmployeeUpdatePage, HomePage, EmployeePage } from "../pages";
 import PublicLayout from "../layouts/PublicLayout/PublicLayout";
 import PrivateLayout from "../layouts/PrivateLayout/PrivateLayout";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
@@ -17,6 +17,7 @@ const AppRouter = () => {
 
                 <Route element={<PrivateRoute><PrivateLayout /></PrivateRoute>}>
                     <Route path="/home" element={<HomePage />} />
+                    <Route path="/employee" element={<EmployeePage />} />
                     <Route path="/add" element={<EmployeeAddPage />} />
                     <Route path="/:id" element={<EmployeeUpdatePage />} />
                 </Route>
